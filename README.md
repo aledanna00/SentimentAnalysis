@@ -1,74 +1,81 @@
-# 🎮 Sentiment Analysis su Recensioni di Videogiochi (Steam)
 
-## 📌 Descrizione
+# 🎮 Sentiment Analysis on Videogame Reviews (Steam)
 
-Questo progetto ha come obiettivo l’analisi del sentiment delle recensioni di videogiochi provenienti dalla piattaforma **Steam**, utilizzando tecniche di **NLP (Natural Language Processing)** e algoritmi di **Text Classification**.
+## 📌 Description
 
-L’idea è quella di distinguere automaticamente recensioni **positive** da recensioni **negative**, applicando un processo di **ETL**, modelli di machine learning e visualizzazioni esplorative.
+This project aims to perform **sentiment analysis** on videogame reviews from the **Steam** platform, using **NLP (Natural Language Processing)** techniques and **Text Classification** algorithms.
+
+The goal is to automatically distinguish **positive** from **negative** reviews through an **ETL process**, machine learning models, and exploratory visualizations.
+
+---
 
 ## 📂 Dataset
 
-Il dataset è stato reperito da Kaggle:
+The dataset was obtained from Kaggle:
 👉 [Steam Reviews & Games Dataset](https://www.kaggle.com/datasets/filipkin/steam-reviews)
 
-È composto da due file principali:
+It consists of two main files:
 
-* **output_steamspy.csv**: contiene metadati sui videogiochi (ID, nome, numero di giocatori).
-* **output.csv**: contiene le recensioni, con etichetta `is_positive` (Positive/Negative).
+* **output_steamspy.csv** – Contains metadata about the games (ID, name, number of players).
+* **output.csv** – Contains the reviews, labeled with `is_positive` (Positive/Negative).
 
-## 🔧 Tecnologie e Librerie Utilizzate
+---
+
+## 🔧 Technologies and Libraries Used
 
 * **Python**
-* **Pandas, Numpy** → gestione e manipolazione dati
-* **Re (RegEx)** → pulizia testo
-* **Scikit-learn** → modelli di machine learning (Naive Bayes, Logistic Regression)
-* **NLTK** → elaborazione del linguaggio naturale
-* **Langdetect** → rilevamento lingua
-* **Matplotlib, Seaborn** → visualizzazioni
-* **WordCloud** → rappresentazioni testuali
+* **Pandas, Numpy** → Data handling and manipulation
+* **Re (RegEx)** → Text cleaning
+* **Scikit-learn** → Machine learning models (Naive Bayes, Logistic Regression)
+* **NLTK** → Natural language processing
+* **Langdetect** → Language detection
+* **Matplotlib, Seaborn** → Data visualization
+* **WordCloud** → Textual representation
 
-## 🛠️ Pipeline del Progetto
+---
+
+## 🛠️ Project Pipeline
 
 1. **ETL (Extract, Transform, Load)**
 
-   * Pulizia e normalizzazione del testo (minuscole, rimozione URL, simboli, spazi).
-   * Filtraggio linguistico (solo recensioni in inglese).
-   * Bilanciamento delle classi (undersampling).
+   * Text cleaning and normalization (lowercasing, URL removal, symbols, spaces).
+   * Language filtering (English-only reviews).
+   * Class balancing (undersampling).
 
 2. **Feature Extraction**
 
-   * Rappresentazione TF-IDF con n-grammi fino a trigrams.
+   * TF-IDF representation with n-grams up to trigrams.
 
-3. **Modelli di Classificazione**
+3. **Classification Models**
 
    * **Naive Bayes (Multinomial)**
-   * **Logistic Regression** (miglior modello, con accuratezza ≈ **91%**).
+   * **Logistic Regression** (best model, with ≈ **91% accuracy**).
 
 4. **Testing**
 
-   * Valutazione con dataset sintetico di recensioni positive/negative.
-   * Metriche: Accuracy, Precision, Recall, F1-score.
+   * Evaluation on a synthetic dataset of positive and negative reviews.
+   * Metrics: Accuracy, Precision, Recall, F1-score.
 
-5. **Visualizzazioni**
+5. **Visualizations**
 
-   * Word Cloud per recensioni positive e negative.
-   * Analisi delle **20 parole più distintive** per ciascuna classe.
+   * Word Clouds for positive and negative reviews.
+   * Analysis of the **20 most distinctive words** for each class.
 
-## 📊 Risultati Principali
+---
 
-* **Logistic Regression** ha superato il Naive Bayes in tutte le metriche principali.
-* Accuratezza complessiva ≈ **91%**.
-* Buon equilibrio tra **Precision** e **Recall**.
-* Word Cloud evidenzia differenze lessicali tra recensioni positive e negative.
+## 📊 Main Results
 
-## 👨‍💻 Autori
+* **Logistic Regression** outperformed Naive Bayes in all major metrics.
+* Overall accuracy ≈ **85%**.
+* Good balance between **Precision** and **Recall**.
+* Word Clouds highlight clear lexical differences between positive and negative reviews.
+
+---
+
+## 👨‍💻 Authors
 
 * **Walter Di Sabatino**
 * **Agnese Bruglia**
 * **Alessandra D’Anna**
 
-Università Politecnica delle Marche – A.A. 2024/2025
-
----
-
-Vuoi che ti prepari anche un file `requirements.txt` con tutte le librerie principali già elencate?
+Polytechnic University of Marche – Academic Year 2024/2025
